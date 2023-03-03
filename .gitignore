@@ -1,2 +1,12 @@
-spotfy-player
-scoop
+/*
+
+!.gitignore
+!README.md
+
+!nvim/
+nvim/Session.vim
+#!nvim/lua/sterbz/
+#!nvim/after/plugins/
+
+!zsh/
+!powershell/
