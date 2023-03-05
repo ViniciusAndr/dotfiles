@@ -1,8 +1,8 @@
-local status, flutterTools = pcall(require, "flutter-tolls")
+local status, flutterTools = pcall(require, "flutter-tools")
 if (not status) then return end
 
-flutterTools.setup {
-  flutter_path = "",
+require("flutter-tools").setup {
+  flutter_path = "E:/flutter/bin/flutter.bat",
   widget_guides = {
     enabled = true
   }
