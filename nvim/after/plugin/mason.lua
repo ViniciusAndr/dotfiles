@@ -20,7 +20,7 @@ mason_lspconfig.setup({
     'graphql',
     'rust_analyzer',
     'tailwindcss',
-    'css-lsp',
+    'cssls',
   },
   automatic_installation = true,
 })

@@ -54,15 +54,6 @@ require('mason-lspconfig').setup_handlers({
       })
     })
   end,
-
-  csserver = function()
-    require'lspconfig'.cssmodules_ls.setup {
-      on_attach = function (client, bufnr)
-        client.server_capabilities.definitionProvider = false
-        on_attach(client, bufnr)
-      end
-    }
-  end
 })
 
 vim.keymap.set('n', '<leader>o', '<cmd>TypescriptOrganizeImports<cr>')
