@@ -10,8 +10,10 @@ M.general = {
     ["<leader>w"] = { '<cmd>w<cr>' },
     ["<leader>x"] = { '<cmd>x<cr>' },
     ["<c-a>"] = { 'gg<S-v>G' },
-    ["<leader>t"] = { ':tabedit' },
     ["f"] = {"<C-w>w"},
+    ["dq"] = {'di"'},
+    ["qd"] = {"di'"},
+    
     --NvimTree
     ["<C-e>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
 
@@ -25,6 +27,9 @@ M.general = {
       end,
       "close buffer",
     },
+  
+    ["<leader>a"] = {"<cmd>lua require('telescope').extensions.vim_bookmarks.all()<cr>"},
+    ["<leader>ta"] = {"<cmd>lua require('alternate-toggler').toggleAlternate()<CR>"}
   },
 }
 

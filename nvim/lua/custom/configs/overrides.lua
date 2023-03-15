@@ -16,32 +16,32 @@ M.treesitter = {
   indent = {
     enable = true,
     disable = {
-      "python"
+      "python",
     },
   },
   autotag = {
-    enable = true
+    enable = true,
   },
   rainbow = {
     enable = true,
     extended_mode = true,
-    max_file_lines = nil
-  }
+    max_file_lines = nil,
+  },
 }
 
 M.mason = {
   ensure_installed = {
     -- lua stuff
-    "lua_ls",
+    "lua-language-server",
 
     -- web dev stuff
+    "eslint_d",
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
     "deno",
-    "tailwindcss",
+    "tailwindcss-language-server",
   },
-  automatic_installation = true,
 }
 
 -- git support in nvimtree
@@ -59,21 +59,51 @@ M.nvimtree = {
     },
   },
   actions = {
-		open_file = {
-			quit_on_open = true
-		}
-	},
-	diagnostics = {
-		enable = true,
-		show_on_dirs = false,
-		debounce_delay = 50,
-		icons = {
-			hint = 'H',
-			info = 'I',
-			warning = 'W',
-			error = 'E'
-		}
-	}
+    open_file = {
+      quit_on_open = true,
+    },
+  },
 }
+
+M.luasnip = function()
+  local options = { history = true, updateevents = "TextChanged,TextChangedI" }
+  local ls = require("luasnip")
+
+  local s = ls.snippet
+  local t = ls.text_node
+  local i = ls.insert_node
+  local d = ls.dynamic_node
+  local sn = ls.snippet_node
+  
+  ls.add_snippets('typescriptreact', {
+    s('log', {
+      t('console.log('),
+      i(1, ''),
+      t(','),
+      i(2, ''),
+      t(')'),
+    }),
+    s('int', {
+      t('interface '),
+      i(1, ''),
+      t({"{","\t", "}"})
+    }),
+    s('rc', {
+      t('export type '),
+      i(1),
+      t('Props = {}'),
+      t({ '', 'export function ' }),
+      d(2, function(args)
+        -- the returned snippetNode doesn't need a position; it's inserted
+        -- "inside" the dynamicNode.
+        return sn(nil, {
+          -- jump-indices are local to each snippetNode, so restart at 1.
+          i(1, args[1]),
+        })
+      end, { 1 }),
+      t('(){return null}'),
+    }),
+  })
+end
 
 return M

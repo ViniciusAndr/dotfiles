@@ -24,11 +24,26 @@ M.blankline = {
 
 M.luasnip = function()
   local options = { history = true, updateevents = "TextChanged,TextChangedI" }
-
-  require("luasnip").config.set_config(options)
+  local ls = require("luasnip")
+  ls.config.set_config(options)
 
   require("luasnip.loaders.from_vscode").lazy_load { paths = vim.g.luasnippets_path or "" }
   require("luasnip.loaders.from_vscode").lazy_load()
+
+
+  local s = ls.snippet
+  local t = ls.text_node
+  local i = ls.insert_node
+
+  ls.add_snippets('typescriptreact', {
+    s('int', {
+      t('interface '),
+      i(1, ''),
+      t({"{", "\t"}),
+      i(2,''),
+      t({"\t", "}"})
+    })
+  })
 
   vim.api.nvim_create_autocmd("InsertLeave", {
     callback = function()

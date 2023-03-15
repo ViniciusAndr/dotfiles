@@ -27,6 +27,11 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
+  
+  {
+    "williamboman/mason.nvim",
+    opts = overrides.mason,
+  },
 
   {
     "nvim-tree/nvim-tree.lua",
@@ -69,20 +74,26 @@ local plugins = {
   },
 
   {
-    "tpope/vim-obsession", lazy = true
+    "tpope/vim-obsession", lazy = false
   },
- 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
 
-  -- Uncomment if you want to re-enable which-key
-  -- {
-  --   "folke/which-key.nvim",
-  --   enabled = true,
-  -- },
+  {
+    'MattesGroeger/vim-bookmarks',
+    lazy = false
+  },
+  
+  { 
+    'tom-anders/telescope-vim-bookmarks.nvim',
+    lazy = false
+  },
+
+  {
+    "rmagatti/alternate-toggler"
+  },
+
+  {
+    "tpope/vim-surround", lazy = false
+  }
 }
 
 return plugins
