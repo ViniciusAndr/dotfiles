@@ -74,7 +74,8 @@ local plugins = {
   },
 
   {
-    "tpope/vim-obsession", lazy = false
+    "tpope/vim-obsession", 
+    lazy = false
   },
 
   {
@@ -92,8 +93,10 @@ local plugins = {
   },
 
   {
-    "tpope/vim-surround", lazy = false
-  }
+    "tpope/vim-surround", 
+    lazy = false
+  },
+
 }
 
 return plugins

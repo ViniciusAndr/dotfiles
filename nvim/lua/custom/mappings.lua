@@ -29,7 +29,7 @@ M.general = {
     },
   
     ["<leader>a"] = {"<cmd>lua require('telescope').extensions.vim_bookmarks.all()<cr>"},
-    ["<leader>ta"] = {"<cmd>lua require('alternate-toggler').toggleAlternate()<CR>"}
+    ["<leader>ta"] = {"<cmd>lua require('alternate-toggler').toggleAlternate()<CR>"},
   },
 }
 
