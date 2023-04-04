@@ -93,6 +93,10 @@ local plugins = {
 
   {
     "tpope/vim-surround", lazy = false
+  },
+
+  {
+    "kdheepak/lazygit.nvim", lazy = false
   }
 }
 
