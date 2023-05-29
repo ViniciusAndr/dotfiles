@@ -117,7 +117,7 @@ local plugins = {
       ))
     end, 
     lazy = false
-  }
+  } 
 }
 
 return plugins

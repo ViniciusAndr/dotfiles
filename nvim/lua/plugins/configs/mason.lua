@@ -6,8 +6,8 @@ local options = {
   ui = {
     icons = {
       package_pending = " ",
-      package_installed = " ",
-      package_uninstalled = " ﮊ",
+      package_installed = "󰄳 ",
+      package_uninstalled = " 󰚌",
     },
 
     keymaps = {
@@ -23,7 +23,6 @@ local options = {
   },
 
   max_concurrent_installers = 10,
-  automatic_installation = true
 }
 
 return options
