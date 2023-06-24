@@ -7,17 +7,17 @@ M.treesitter = {
     "html",
     "css",
     "javascript",
+    "typescript",
+    "tsx",
     "c",
     "markdown",
     "markdown_inline",
-    "tsx",
-    "json",
   },
   indent = {
     enable = true,
-    disable = {
-      "python",
-    },
+    -- disable = {
+    --   "python"
+    -- },
   },
   autotag = {
     enable = true,
@@ -33,14 +33,19 @@ M.mason = {
   ensure_installed = {
     -- lua stuff
     "lua-language-server",
+    "stylua",
 
     -- web dev stuff
-    "eslint_d",
     "css-lsp",
+    "eslint_d",
     "html-lsp",
     "typescript-language-server",
     "deno",
-    "tailwindcss-language-server",
+    "prettier",
+
+    -- c/cpp stuff
+    "clangd",
+    "clang-format",
   },
 }
 
@@ -64,46 +69,5 @@ M.nvimtree = {
     },
   },
 }
-
-M.luasnip = function()
-  local options = { history = true, updateevents = "TextChanged,TextChangedI" }
-  local ls = require("luasnip")
-
-  local s = ls.snippet
-  local t = ls.text_node
-  local i = ls.insert_node
-  local d = ls.dynamic_node
-  local sn = ls.snippet_node
-  
-  ls.add_snippets('typescriptreact', {
-    s('log', {
-      t('console.log('),
-      i(1, ''),
-      t(','),
-      i(2, ''),
-      t(')'),
-    }),
-    s('int', {
-      t('interface '),
-      i(1, ''),
-      t({"{","\t", "}"})
-    }),
-    s('rc', {
-      t('export type '),
-      i(1),
-      t('Props = {}'),
-      t({ '', 'export function ' }),
-      d(2, function(args)
-        -- the returned snippetNode doesn't need a position; it's inserted
-        -- "inside" the dynamicNode.
-        return sn(nil, {
-          -- jump-indices are local to each snippetNode, so restart at 1.
-          i(1, args[1]),
-        })
-      end, { 1 }),
-      t('(){return null}'),
-    }),
-  })
-end
 
 return M

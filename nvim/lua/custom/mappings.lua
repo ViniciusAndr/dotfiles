@@ -3,7 +3,7 @@ local M = {}
 
 M.general = {
   n = {
-    --Base
+     --Base
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["dw"] = { 'vb"_d' },
     ["<leader>q"] = { "<cmd>q<cr>" },
