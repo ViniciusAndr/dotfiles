@@ -22,6 +22,22 @@ M.general = {
     --LSP
     ["<leader>d"] = { "<cmd>Telescope lsp_document_symbols<cr>", opts = { noremap = true, silent = true } },
 
+    ["<leader>fe"] = {
+      function()
+        require("telescope").extensions.file_browser.file_browser {
+          path = "%:p:h",
+          cwd = vim.fn.expand "%:p:h",
+          respect_gitignore = false,
+          hidden = true,
+          grouped = true,
+          previewer = true,
+          initial_mode = "normal",
+          layout_config = { height = 40 },
+        }
+      end,
+      "File Browser",
+    },
+
     --bufferline
     ["<leader>cq"] = {
       function()

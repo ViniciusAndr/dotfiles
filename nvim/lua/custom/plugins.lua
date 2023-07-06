@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -86,6 +86,11 @@ local plugins = {
   {
     "tom-anders/telescope-vim-bookmarks.nvim",
     lazy = false,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    lazy = false,
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
 
   {
