@@ -3,7 +3,7 @@ local M = {}
 
 M.general = {
   n = {
-     --Base
+    --Base
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["dw"] = { 'vb"_d' },
     ["<leader>q"] = { "<cmd>q<cr>" },
@@ -23,7 +23,7 @@ M.general = {
     ["<leader>d"] = { "<cmd>Telescope lsp_document_symbols<cr>", opts = { noremap = true, silent = true } },
 
     --bufferline
-    ["<leader>c"] = {
+    ["<leader>cq"] = {
       function()
         require("nvchad_ui.tabufline").close_buffer()
       end,
