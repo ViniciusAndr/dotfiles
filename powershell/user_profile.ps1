@@ -23,7 +23,11 @@ $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 # Alias
 Set-Alias -Name vim -Value nvim
 Set-Alias ll ls
+Set-Alias c clear
 Set-Alias g git
+Set-Alias gs Git-Status
+Set-Alias glo Git-Log
+Set-Alias gd Git-Diff
 Set-Alias grep findstr
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
@@ -40,4 +44,17 @@ function w ($command){
 
 function ts(){
   oh-my-posh toggle spotify
+}
+
+#Git functions
+function Git-Status() {
+  git status
+}
+
+function Git-Log() {
+  git log
+}
+
+function Git-Diff($file) {
+  git diff $file
 }

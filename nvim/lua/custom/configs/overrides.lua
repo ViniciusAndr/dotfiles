@@ -13,6 +13,10 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
   },
+  highlight = {
+    enable = true,
+    disable = {},
+  },
   indent = {
     enable = true,
     -- disable = {
@@ -24,8 +28,9 @@ M.treesitter = {
   },
   rainbow = {
     enable = true,
-    extended_mode = true,
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil,
+    disable = { "jsx", "cpp", "tsx" },
   },
 }
 
