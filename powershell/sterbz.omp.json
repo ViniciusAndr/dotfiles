@@ -30,7 +30,7 @@
           "powerline_symbol": "\ue0b0",
           "foreground": "#E4E4E4",
           "background": "#444444",
-          "template": " {{ .Path }} ",
+          "template": " {{ .Path }}  ",
           "properties": {
             "style": "full"
           }
