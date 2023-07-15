@@ -3,7 +3,7 @@
 
 #$omp_config = Join-Path $PSScriptRoot ".\sterbz.omp.json"
 #oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
-oh-my-posh init pwsh --config 'C:\Users\vinic\AppData\Local\Programs\oh-my-posh\themes\spaceship.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'C:\Users\vinic\.config\powershell\sterbz.omp.json' | Invoke-Expression
 
 Import-Module -Name Terminal-Icons
 
