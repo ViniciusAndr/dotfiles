@@ -1,8 +1,10 @@
 alias rz="source $HOME/.zshrc"
 alias gs="git status"
+alias gd="git diff"
+alias glo="git log"
 alias c=clear
 alias vim=nvim
-alias ll="logo-ls -Ggha"
+alias ll="exa -lagx --git --icons --colour always"
 alias less="/usr/bin/less"
 alias dfiles="cd $HOME/.config/"
 alias cfg="vim $HOME/.zshrc"
