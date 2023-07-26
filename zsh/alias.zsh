@@ -8,3 +8,4 @@ alias ll="exa -lagx --git --icons --colour always"
 alias less="/usr/bin/less"
 alias dfiles="cd $HOME/.config/"
 alias cfg="vim $HOME/.zshrc"
+alias eq=exit
