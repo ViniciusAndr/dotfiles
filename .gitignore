@@ -11,3 +11,15 @@ nvim/plugin/packer_compiled.lua
 
 !zsh/
 !powershell/
+
+!neofetch/
+
+#Wayland
+!hypr/
+!HyprV/
+!waybar/
+!wallpapers/
+!mako/
+!wofi/
+
+!hyprHelp.txt
