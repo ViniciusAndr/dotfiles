@@ -1,7 +1,13 @@
 #Imports
 [ -d /home/linuxbrew/.linuxbrew ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+source /opt/asdf-vm/asdf.sh
+
+export PATH="/home/sterbz/Android/Sdk/emulator:$PATH"
 export PATH=/home/sterbz/.cargo/bin:$PATH
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
