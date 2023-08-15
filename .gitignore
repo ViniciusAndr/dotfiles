@@ -3,9 +3,6 @@
 !.gitignore
 !README.md
 
-!nvim/
-nvim/Session.vim
-nvim/plugin/packer_compiled.lua
 #!nvim/lua/sterbz/
 #!nvim/after/plugins/
 

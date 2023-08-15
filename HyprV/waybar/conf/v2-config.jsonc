@@ -18,7 +18,8 @@
     "custom/lock_screen",
     "custom/updates",
     "clock",
-    "custom/power_btn"
+    "custom/power_btn",
+    "custom/media"
   ],
   "modules-right": [
     "temperature",
@@ -28,9 +29,7 @@
     "pulseaudio",
     "pulseaudio#microphone",
     "tray",
-    "custom/weather",
-    "custom/myhyprv",
-    "custom/light_dark"
+    "custom/weather"
   ],
 
   "include": [
